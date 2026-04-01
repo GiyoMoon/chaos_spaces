@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT INTO space (space_id, name, space_api_url) VALUES (?, ?, ?)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": []
+  },
+  "hash": "e5a740f4e35ca9e5824c512d30d1cf80ce755c00c3544edacdd44af99e59629b"
+}

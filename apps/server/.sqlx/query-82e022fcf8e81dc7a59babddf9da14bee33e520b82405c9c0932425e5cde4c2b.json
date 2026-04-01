@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "UPDATE space SET space_api_url = ?, active = TRUE, updated_at = CURRENT_TIMESTAMP WHERE space_id = ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": []
+  },
+  "hash": "82e022fcf8e81dc7a59babddf9da14bee33e520b82405c9c0932425e5cde4c2b"
+}

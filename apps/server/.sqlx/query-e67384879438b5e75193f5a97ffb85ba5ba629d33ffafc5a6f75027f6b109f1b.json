@@ -1,0 +1,26 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT space_id, space_api_url FROM space WHERE active = TRUE",
+  "describe": {
+    "columns": [
+      {
+        "name": "space_id",
+        "ordinal": 0,
+        "type_info": "Text"
+      },
+      {
+        "name": "space_api_url",
+        "ordinal": 1,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "e67384879438b5e75193f5a97ffb85ba5ba629d33ffafc5a6f75027f6b109f1b"
+}

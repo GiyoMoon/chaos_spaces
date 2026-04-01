@@ -1,0 +1,108 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "chaos_spaces API",
+    "description": "",
+    "license": {
+      "name": ""
+    },
+    "version": "0.0.0"
+  },
+  "paths": {
+    "/api/stats/api/stats/overview": {
+      "get": {
+        "tags": [
+          "Stats"
+        ],
+        "operationId": "overview",
+        "responses": {
+          "200": {
+            "description": "List of spaces with their current status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpaceOverview"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ListError": {
+        "type": "object",
+        "required": [
+          "index",
+          "errors"
+        ],
+        "properties": {
+          "errors": {
+            "$ref": "#/components/schemas/ValidationError"
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "SpaceOverview": {
+        "type": "object",
+        "required": [
+          "name",
+          "last_fetched"
+        ],
+        "properties": {
+          "last_fetched": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "open": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      },
+      "ValidationError": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "propertyNames": {
+              "type": "string"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListError"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Stats",
+      "description": "Stats control endpoints"
+    }
+  ]
+}

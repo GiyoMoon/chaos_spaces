@@ -1,0 +1,7 @@
+CREATE TABLE space_log (
+  space_log_id TEXT NOT NULL PRIMARY KEY,
+  space_id TEXT NOT NULL REFERENCES space (space_id) ON DELETE CASCADE,
+  open BOOLEAN,
+  response TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,32 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        SELECT\n            s.name,\n            sl.open as \"open: bool\",\n            sl.created_at as \"last_fetched: DateTime\"\n        FROM space s\n        LEFT JOIN space_log sl ON sl.space_log_id = (\n            SELECT space_log_id FROM space_log\n            WHERE space_id = s.space_id\n            ORDER BY created_at DESC\n            LIMIT 1\n        )\n        WHERE s.active = TRUE\n        ",
+  "describe": {
+    "columns": [
+      {
+        "name": "name",
+        "ordinal": 0,
+        "type_info": "Text"
+      },
+      {
+        "name": "open: bool",
+        "ordinal": 1,
+        "type_info": "Bool"
+      },
+      {
+        "name": "last_fetched: DateTime",
+        "ordinal": 2,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      true,
+      true
+    ]
+  },
+  "hash": "c76dd46efef23f36e54a88fe8c1fca20ae8aef5c9ade3d3563017a403a02f168"
+}

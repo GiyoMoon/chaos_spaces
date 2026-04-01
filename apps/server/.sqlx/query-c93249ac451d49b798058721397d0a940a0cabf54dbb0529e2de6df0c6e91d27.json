@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT INTO space_log (space_log_id, space_id, open, response) VALUES (?, ?, ?, ?)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 4
+    },
+    "nullable": []
+  },
+  "hash": "c93249ac451d49b798058721397d0a940a0cabf54dbb0529e2de6df0c6e91d27"
+}
