@@ -20,7 +20,11 @@
 
         src = pkgs.lib.cleanSourceWith {
           src = ./apps/server;
-          filter = path: type: (pkgs.lib.hasSuffix ".sql" path) || (pkgs.lib.hasInfix "/.sqlx/" path) || (craneLib.filterCargoSources path type);
+          filter =
+            path: type:
+            (pkgs.lib.hasSuffix ".sql" path)
+            || (pkgs.lib.hasInfix "/.sqlx/" path)
+            || (craneLib.filterCargoSources path type);
         };
 
         buildArgs = {
